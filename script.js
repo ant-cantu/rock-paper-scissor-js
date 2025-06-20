@@ -17,23 +17,6 @@ const sysMsg = document.querySelector("#system-msg");
 // Reset Button
 const rBtn = document.querySelector("#btn-reset");
 
-// Make A Sound
-function playChime() {
-  const ctx = new (window.AudioContext || window.webkitAudioContext)();
-  const oscillator = ctx.createOscillator();
-  const gain = ctx.createGain();
-
-  oscillator.type = 'sine'; // smooth chime tone
-  oscillator.frequency.value = 880; // A5 note
-
-  oscillator.connect(gain);
-  gain.connect(ctx.destination);
-
-  oscillator.start();
-  gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 1); // fade out
-  oscillator.stop(ctx.currentTime + 1);
-}
-
 function playGame(input) {
     let cpu = parseInt(Math.random() * 3);
     let winMsg = "";
@@ -81,8 +64,6 @@ function playGame(input) {
     cScore.textContent = cpuScore;
 
     sysMsg.textContent = winMsg;
-
-    playChime()
 
     if(playerScore === 5 || cpuScore === 5) {
         const test = "Game over! " + (playerScore > cpuScore ? "You " : "CPU ") + "wins!";
