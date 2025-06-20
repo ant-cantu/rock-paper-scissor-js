@@ -1,0 +1,100 @@
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    background-color: rgb(241, 241, 241);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+
+    .cpu-throw {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(247, 237, 224);
+        border: 3px solid black;
+        border-radius: 10px;
+        height: 150px;
+        width: 150px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+
+        #cRock,
+        #cPaper,
+        #cScissors {
+            display: none;
+            font-size: 75px;
+        }
+    }
+
+    .player-throw {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 25px;
+
+        button {
+            width: 75px;
+            height: 50px;
+            font-size: 25px;
+            background-color: deepskyblue;
+            border-radius: 10px;
+            border: none;
+            transition: 0.3s;
+            cursor: pointer;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            background-color: white;
+        }
+    }
+
+    .game-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+
+        .score h2 {
+            margin: 0;
+            padding: 0;
+        }
+
+        .score p {
+            margin: 0;
+            padding: 0;
+            font-size: 20px;
+        }
+
+        .system-msg {
+            font-size: 26px;
+        }
+
+        .reset #btn-reset {
+            background-color: deepskyblue;
+            color: white;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            border: none;
+        }
+
+        .reset #btn-reset:hover {
+            background-color: black;
+            color: red;
+            font-weight: bold;
+        }
+    }
+}
+
