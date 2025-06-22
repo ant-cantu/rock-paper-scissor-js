@@ -17,13 +17,17 @@ const sysMsg = document.querySelector("#system-msg");
 // Reset Button
 const rBtn = document.querySelector("#btn-reset");
 
+function clearDisplay() {
+    cpuRock.style.display = "none";
+    cpuPaper.style.display = "none";
+    cpuScissors.style.display = "none";
+}
+
 function playGame(input) {
     let cpu = parseInt(Math.random() * 3);
     let winMsg = "";
 
-    cpuRock.style.display = "none";
-    cpuPaper.style.display = "none";
-    cpuScissors.style.display = "none";
+    clearDisplay();
 
     switch(cpu) {
         case 0:
@@ -70,6 +74,10 @@ function playGame(input) {
         sysMsg.textContent = "Game over! " + (playerScore > cpuScore ? "You win!" : "CPU wins!");
         gameOver = true;
     }
+
+    setTimeout(() => {
+        clearDisplay();
+    }, 1000);
 };
 
 const btnR = document.querySelector("button#rock");
